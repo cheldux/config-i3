@@ -6,7 +6,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 call vundle#begin('~/.config/vim/bundle')
@@ -101,8 +101,8 @@ set splitbelow
 set splitright
 
 "* Tab
-set tabstop=4
-set shiftwidth=4
+"* set tabstop=4
+set shiftwidth=2
 set noexpandtab
 
 "* Use the system's clipboard
@@ -114,13 +114,12 @@ set relativenumber
 
 "* Colorscheme
 set background=dark
-colorscheme PaperColor
 let g:PaperColor_Theme_Options = {
       \   'theme': {
       \     'default': {
       \       'allow_bold': 1,
       \       'allow_italic': 1,
-      \       'transparent_background': 0
+      \       'transparent_background': 1
       \     }
       \   },
       \   'language': {
@@ -137,8 +136,9 @@ let g:PaperColor_Theme_Options = {
       \     }
       \   }
       \ }
+colorscheme PaperColor
 
-let s:transparent = 0
+let s:transparent = 1
 function! Transparent()
 	if s:transparent == 0
 		let s:transparent = 1
@@ -150,7 +150,6 @@ function! Transparent()
 				\   }
 				\ }
         colorscheme PaperColor
-		echo("Background is now transparent!")
 	else
 		let s:transparent = 0
 		let g:PaperColor_Theme_Options = {
@@ -161,8 +160,8 @@ function! Transparent()
 				\   }
 				\ }
         colorscheme PaperColor
-		echo("Background is no longer transparent!")
 	endif
+	echo("")
 endfunction
 nnoremap <A-t> :call Transparent()<CR>
 
@@ -427,9 +426,9 @@ nnoremap <C-c> :2Term python3<CR>
 map <F5> <ESC> :!python3 %<CR>
 
 "* Hide/Show bar
-set noshowmode
-set laststatus=0
-let s:hidden_all = 1
+set showmode
+set laststatus=2
+let s:hidden_all = 0
 function! ToggleHiddenAll()
     if s:hidden_all == 0
         let s:hidden_all = 1
