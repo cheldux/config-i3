@@ -1,45 +1,48 @@
 #!/bin/sh
 
-B='#00000000'  # blank
-C='#ffffff22'  # clear ish
-D='#983dffcc'  # default
-T='#a800e5ee'  # text
-W='#c70000bb'  # wrong
-V='#00bb00bb'  # verifying
+BLANK='#00000000'
+CLEAR='#ffffff22'
+DEFAULT='#ff00ffcc'
+TEXT='#242424ee'
+WRONG='#880000bb'
+VERIFYING='#bb00bbbb'
+IMG=$HOME/Pictures/lock.png
 
 i3lock \
---insidevercolor=$C   \
---ringvercolor=$V     \
+-e \
+--pointer=default \
+--color=$BLANK \
+--image=$IMG \
+-C \
 \
---insidewrongcolor=$C \
---ringwrongcolor=$W   \
+--insidever-color=$CLEAR \
+--ringver-color=$VERIFYING \
 \
---insidecolor=$B      \
---ringcolor=$D        \
---linecolor=$B        \
---separatorcolor=$D   \
+--insidewrong-color=$CLEAR \
+--ringwrong-color=$WRONG \
 \
---verifcolor=$T        \
---wrongcolor=$T        \
---timecolor=$T        \
---datecolor=$T        \
---layoutcolor=$T      \
---keyhlcolor=$W       \
---bshlcolor=$W        \
+--inside-color=$BLANK \
+--ring-color=$DEFAULT \
+--line-color=$BLANK \
+--separator-color=$DEFAULT \
 \
---screen 1            \
---blur 1              \
---clock               \
---indicator           \
---timestr="%H:%M:%S"  \
---datestr="%A, %m %Y" \
---keylayout 1         \
-
-
-# --veriftext="Drinking verification can..."
-# --wrongtext="Nope!"
-# --textsize=20
-# --modsize=10
-# --timefont=comic-sans
-# --datefont=monofur
-# etc
+--verif-color=$TEXT \
+--wrong-color=$TEXT \
+--time-color=$TEXT \
+--date-color=$TEXT \
+--layout-color=$TEXT \
+--keyhl-color=$WRONG \
+--bshl-color=$WRONG \
+\
+--screen 0 \
+--clock \
+--indicator \
+\
+--time-str="%H:%M:%S" \
+--date-str="%Y-%m-%d" \
+--time-pos="ix:iy+125" \
+\
+--greeter-text="Welcome back" \
+--greeter-color=$TEXT \
+--greeter-pos="ix:iy-105" \
+--keylayout 1 \
