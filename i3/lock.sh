@@ -3,10 +3,13 @@
 BLANK='#00000000'
 CLEAR='#ffffff22'
 DEFAULT='#ff00ffcc'
-TEXT='#242424ee'
+TEXT='#14161bee'
 WRONG='#880000bb'
 VERIFYING='#bb00bbbb'
-IMG=$HOME/Pictures/lock.png
+IMG=$HOME/.config/i3/lock.png
+
+killall -q i3lock
+while pgrep -x i3lock >/dev/null; do sleep 1; done
 
 i3lock \
 -e \

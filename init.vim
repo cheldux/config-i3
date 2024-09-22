@@ -67,6 +67,8 @@ if $TERM =~# '^xterm.*'
 endif
 "* ASM
 Plugin 'philj56/vim-asm-indent'
+"* 42
+Plugin '42Paris/42header'
 " }}}
 
 call vundle#end()            " required
@@ -414,7 +416,7 @@ imap <C-a> <esc>I
 nmap <C-k> :NERDTreeTabsToggle<CR>
 
 "* Choose windwow
-nmap  -  <Plug>(choosewin)
+"* nmap  -  <Plug>(choosewin)
 
 "* Open terminal
 nmap <C-b> :10Term<CR>
@@ -682,3 +684,7 @@ autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
 autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 "}}}
+
+"* 42 things
+let g:user42 = 'thschnei'
+let g:mail42 = 'marvin@42.fr'
