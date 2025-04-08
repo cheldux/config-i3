@@ -52,10 +52,10 @@ return {
 	},
 
 	-- Auto setup lua_ls for neovim plugin developpement (also a requirement of nvim-dap-ui)
-	{
-		"folke/neodev.nvim",
-		config = require "plugins.configs.lsp".neodev.config,
-	},
+	--{
+	--	"folke/neodev.nvim",
+	--	config = require "plugins.configs.lsp".neodev.config,
+	--},
 
 	-- Ltex-ls integration
 	--{
