@@ -4,17 +4,17 @@ BLANK='#00000000'
 CLEAR='#ffffff22'
 DEFAULT='#214291'
 ALT='#2f5ed0'
-TEXT='#080808ee'
-WRONG='#880000bb'
-VERIFYING='#ff2f5ed0'
-IMG=$HOME/.config/i3/lock.png
+TEXT='#080808'
+WRONG='#880000'
+VERIFYING='#2f5ed0'
+IMG=$HOME/.config/i3/scripts/lock.png
 
 killall -q i3lock
 while pgrep -x i3lock >/dev/null; do sleep 1; done
 
 i3lock \
 -e \
---pointer=default \
+\ #--pointer=default \
 --color=$BLANK \
 --image=$IMG \
 -C \
@@ -49,4 +49,3 @@ i3lock \
 --greeter-text="Locked" \
 --greeter-color=$TEXT \
 --greeter-pos="ix:iy-105" \
---keylayout 1 \
