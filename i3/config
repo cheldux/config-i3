@@ -25,6 +25,7 @@ set $d_red "#cc241d"
 set $l_red "#fb4934"
 set $fg "#ebdbb2"
 set $bg "#282828"
+set $bg0_h "#1d2021"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
